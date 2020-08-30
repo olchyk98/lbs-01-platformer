@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+
+/*
+ * Obstacles
+ * UI
+ * Points
+ * Points calculation -> Win
+ * Obstacles calculation -> Lose
+ */
 
 namespace Player
 {
@@ -9,10 +18,10 @@ namespace Player
         #region Fields
         
         #region Inspector Exposed Fields
-        [SerializeField] [Tooltip("Jump Height")] [Range(.1f, 1f)]
+        [SerializeField] [Tooltip("Jump Height")] [Range(3f, 20f)]
         private float myJumpHeight;
 
-        [SerializeField] [Tooltip("Movement Speed")] [Range(.1f, 1f)]
+        [SerializeField] [Tooltip("Movement Speed")] [Range(5f, 20f)]
         private float myMovementSpeed;
         #endregion
         
@@ -40,13 +49,29 @@ namespace Player
             myRigidbody = GetComponent<Rigidbody2D>();
 
         }
+
+        private void OnDisable()
+        {
+            // :Unsubscribe from the input events:
+            // Get the component and temp store it
+            // May be added as an private field, but used only twice.
+            PlayerInput inputEvents = GetComponent<PlayerInput>();
+            
+            // Unsubscribe from the horizontal movement event
+            inputEvents.OnHorizontalMove -= MoveHorizontal;
+            
+            // Unsubscribe from the jump event
+            inputEvents.OnJump -= Jump;
+        }
+
         #endregion
 
         #region Methods
         public void MoveHorizontal(float aHorizontalValue)
         {
-            // myRigidbody.MovePosition(GetComponent<Transform>().position + Vector3.right * (aHorizontalValue * myMovementSpeed));
-            myRigidbody.AddForce(Vector2.right * (aHorizontalValue * myMovementSpeed));
+            // Change velocity X and preserve velocity Y
+            myRigidbody.velocity = (myRigidbody.velocity * Vector2.up) +
+                                   Vector2.right * (aHorizontalValue * myMovementSpeed);
         }
         
         /// <summary>
@@ -54,7 +79,7 @@ namespace Player
         /// </summary>
         public void Jump()
         {
-            myRigidbody.AddForce(Vector2.up * myJumpHeight, ForceMode2D.Impulse);
+            myRigidbody.AddForce(Vector3.up * myJumpHeight, ForceMode2D.Impulse);
         }
         #endregion
     }

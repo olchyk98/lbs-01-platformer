@@ -67,6 +67,13 @@ namespace Player
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Changes player's horizontal position (velocity)
+        /// </summary>
+        /// <param name="aHorizontalValue">
+        /// Float that represents direction and drag.
+        /// The value should be between -1 and 1.
+        /// </param>
         public void MoveHorizontal(float aHorizontalValue)
         {
             // Change velocity X and preserve velocity Y

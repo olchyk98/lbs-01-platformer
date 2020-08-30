@@ -2,6 +2,7 @@
 using UnityEngine;
 
 /*
+ * Ground collision detection (using a child object and unity actions) -> Prevent from jumping in the air
  * Obstacles
  * UI
  * Points

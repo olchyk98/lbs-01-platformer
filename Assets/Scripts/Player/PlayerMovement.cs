@@ -3,7 +3,7 @@ using UnityEngine;
 
 /*
  * Camera Movement [x]
- * Ground collision detection (using a child object and unity actions) -> Prevent from jumping in the air
+ * Ground collision detection (using a child object and unity actions) -> Prevent from jumping in the air [x]
  * Obstacles
  * UI
  * Points
@@ -14,23 +14,25 @@ using UnityEngine;
 namespace Player
 {
     [RequireComponent(typeof(PlayerInput))] // Used for keyboard inputs
-    [RequireComponent(typeof(Rigidbody))] // Used for physics
+    [RequireComponent(typeof(Rigidbody2D))] // Used for physics
     public class PlayerMovement : MonoBehaviour
     {
         #region Fields
         
         #region Inspector Exposed Fields
         [SerializeField] [Tooltip("Jump Height")] [Range(3f, 20f)]
-        private float myJumpHeight;
+        private float myJumpHeight = 12f;
 
         [SerializeField] [Tooltip("Movement Speed")] [Range(5f, 20f)]
-        private float myMovementSpeed;
+        private float myMovementSpeed = 12f;
+
+        [SerializeField] [Tooltip("Ground Collider")]
+        private PlayerGroundEvents myGroundCollider;
         #endregion
         
         #region Private Fields
         private Rigidbody2D myRigidbody;
         #endregion
-        
         #endregion
         
         #region RP Methods
@@ -38,32 +40,17 @@ namespace Player
         {
             // :Subscribe to the input events:
             // Get the component and temp store it
-            PlayerInput inputEvents = GetComponent<PlayerInput>();  
+            PlayerInput inputEvents = GetComponent<PlayerInput>();
             
             // Subscribe to the horizontal movement event
             inputEvents.OnHorizontalMove += MoveHorizontal;
             
             // Subscribe to the jump event
             inputEvents.OnJump += Jump;
-            
+
             // :Define Cache Fields:
             // Rigidbody
             myRigidbody = GetComponent<Rigidbody2D>();
-
-        }
-
-        private void OnDisable()
-        {
-            // :Unsubscribe from the input events:
-            // Get the component and temp store it
-            // May be added as an private field, but used only twice.
-            PlayerInput inputEvents = GetComponent<PlayerInput>();
-            
-            // Unsubscribe from the horizontal movement event
-            inputEvents.OnHorizontalMove -= MoveHorizontal;
-            
-            // Unsubscribe from the jump event
-            inputEvents.OnJump -= Jump;
         }
 
         #endregion
@@ -76,18 +63,21 @@ namespace Player
         /// Float that represents direction and drag.
         /// The value should be between -1 and 1.
         /// </param>
-        public void MoveHorizontal(float aHorizontalValue)
+        private void MoveHorizontal(float aHorizontalValue)
         {
             // Change velocity X and preserve velocity Y
-            myRigidbody.velocity = (myRigidbody.velocity * Vector2.up) +
-                                   Vector2.right * (aHorizontalValue * myMovementSpeed);
+            myRigidbody.velocity = (myRigidbody.velocity * Vector2.up) + Vector2.right * (aHorizontalValue * myMovementSpeed);
         }
         
         /// <summary>
         /// Makes player jump using its Rigidbody component.
         /// </summary>
-        public void Jump()
+        private void Jump()
         {
+            // Don't process if player does not touching the ground
+            if(!myGroundCollider.IsTouchingGround) return;
+            
+            // Add jump force
             myRigidbody.AddForce(Vector3.up * myJumpHeight, ForceMode2D.Impulse);
         }
         #endregion

@@ -31,12 +31,18 @@ namespace Camera
             // Access camera's position once
             Vector3 cameraPosition = myTransform.position;
             
-            // Calculate next camera's position
-            float nextX = Mathf.Lerp(cameraPosition.x, targetTransform.position.x, .1f);
+            // Access target's position once
+            Vector3 targetPosition = targetTransform.position;
             
-            // Create new position vector
+            // Calculate next camera's position
+            float lerpSpeed = .1f;
+            float nextX = Mathf.Lerp(cameraPosition.x, targetPosition.x, lerpSpeed);
+            float nextY = Mathf.Lerp(cameraPosition.y, targetPosition.y, lerpSpeed);
+            
+            // Update camera position
             cameraPosition.x = nextX;
-
+            cameraPosition.y = nextY;
+            
             // Set new camera position
             myTransform.position = cameraPosition;
         }

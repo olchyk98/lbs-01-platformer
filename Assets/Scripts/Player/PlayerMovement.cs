@@ -1,16 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-/*
- * Camera Movement [x]
- * Ground collision detection (using a child object and unity actions) -> Prevent from jumping in the air [x]
- * Obstacles
- * UI
- * Points
- * Points calculation -> Win
- * Obstacles calculation -> Lose
- */
-
 namespace Player
 {
     [RequireComponent(typeof(PlayerInput))] // Used for keyboard inputs

@@ -9,19 +9,15 @@ namespace Player
     {
         #region Fields
 
-        public float Health { get; private set; }
+        public float Health { get; private set; } = 100f;
 
-        private Rigidbody2D myRigidbody2D;
+        private Rigidbody2D myRigidbody;
 
-        #endregion
-        
-        #region Inspector Exposed Fields
-
-        [SerializeField] [Range(1f, 25f)] private float hitVelocity = 5f;
         #endregion
         
         #region Public Events
-        public UnityAction OnPlayerDies;
+        public UnityAction OnDie;
+        public UnityAction<float> OnHealthUpdates;
         #endregion
 
         #region RP Methods
@@ -31,10 +27,10 @@ namespace Player
             // Subscribe to obstacle touch event
             var scoreEvents = GetComponent<PlayerScores>();
 
-            scoreEvents.OnPlayerTouchesObstacle += HandlePlayerTouchesObstacle;
+            scoreEvents.OnTouchesObstacle += HandlePlayerTouchesObstacle;
             
             // Cache rigidbdy
-            myRigidbody2D = GetComponent<Rigidbody2D>();
+            myRigidbody = GetComponent<Rigidbody2D>();
         }
         #endregion
         
@@ -43,10 +39,7 @@ namespace Player
         private void HandlePlayerTouchesObstacle()
         {
             // Apply damage to the player
-            ApplyDamage(10f);
-            
-            // Add hit force to the player's rigidbody
-            myRigidbody2D.AddForce(Vector2.up * hitVelocity);
+            ApplyDamage(50f);
         }
         #endregion
         
@@ -67,9 +60,15 @@ namespace Player
             // Check if player is dead
             if (Health <= 0)
             {
-                OnPlayerDies?.Invoke();
+                // Notify subscribers
+                OnDie?.Invoke();
+                
+                // Hardcoded Clamping
                 Health = 0;
             }
+            
+            // Notify subscribers
+            OnHealthUpdates?.Invoke(Health);
         }
         #endregion
     }

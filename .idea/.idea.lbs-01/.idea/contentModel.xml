@@ -15,6 +15,9 @@
             <e p="PlayerMovement.cs" t="Include" />
             <e p="PlayerScores.cs" t="Include" />
           </e>
+          <e p="StatsCanvas" t="Include">
+            <e p="StatsUpdater.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="lbs-01.sln" t="IncludeFlat" />

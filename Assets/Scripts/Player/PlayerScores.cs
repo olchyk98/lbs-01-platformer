@@ -17,7 +17,6 @@ namespace Player
         #endregion
         
         #region Public Events
-        public UnityAction OnTouchesObstacle;
         public UnityAction OnPlayerWin;
         #endregion
         
@@ -29,25 +28,8 @@ namespace Player
         }
         #endregion
 
-        #region Collider Events
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            // Check if touching any special objects
-            if (myCollider.IsTouchingLayers(obstaclesLayer))
-            {
-                OnTouchesObstacle?.Invoke();
-                
-            }
-
-            if (myCollider.IsTouchingLayers(coinsLayer))
-            {
-                IncrementScore(); 
-            }
-        }
-        #endregion
-        
         #region Methods
-        private void IncrementScore()
+        public void IncrementScore()
         {
             OnPlayerWin?.Invoke();
         }

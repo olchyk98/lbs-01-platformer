@@ -23,26 +23,11 @@ namespace Player
         #region RP Methods
 
         private void Start()
-        {
-            // Subscribe to obstacle touch event
-            var scoreEvents = GetComponent<PlayerScores>();
-
-            scoreEvents.OnTouchesObstacle += HandlePlayerTouchesObstacle;
-            
-            // Cache rigidbdy
+        { // Cache rigidbody
             myRigidbody = GetComponent<Rigidbody2D>();
         }
         #endregion
-        
-        #region Event Handlers
 
-        private void HandlePlayerTouchesObstacle()
-        {
-            // Apply damage to the player
-            ApplyDamage(50f);
-        }
-        #endregion
-        
         #region Methods
 
         /// <summary>

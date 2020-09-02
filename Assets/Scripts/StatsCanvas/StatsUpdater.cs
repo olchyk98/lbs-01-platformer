@@ -1,5 +1,4 @@
-﻿using System;
-using Player;
+﻿using Player;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +25,7 @@ namespace StatsCanvas
         private void Start()
         {
             // Subscribe to player health updates
-            myPlayerHealth.OnHealthUpdates += (health) =>
+            myPlayerHealth.OnHealthUpdates += health =>
             {
                 myHealthText.text = $"Health: {health}";
             };

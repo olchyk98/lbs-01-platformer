@@ -11,21 +11,11 @@ namespace Player
 
         public float Health { get; private set; } = 100f;
 
-        private Rigidbody2D myRigidbody;
-
         #endregion
         
         #region Public Events
         public UnityAction OnDie;
         public UnityAction<float> OnHealthUpdates;
-        #endregion
-
-        #region RP Methods
-
-        private void Start()
-        { // Cache rigidbody
-            myRigidbody = GetComponent<Rigidbody2D>();
-        }
         #endregion
 
         #region Methods

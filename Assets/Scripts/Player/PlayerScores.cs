@@ -6,16 +6,6 @@ namespace Player
     [RequireComponent(typeof(BoxCollider2D))]
     public class PlayerScores : MonoBehaviour
     {
-        #region Fields
-        [SerializeField] private LayerMask obstaclesLayer;
-        [SerializeField] private LayerMask coinsLayer;
-
-        private Collider2D myCollider;
-
-        public int Score { get; private set; }
-
-        #endregion
-        
         #region Public Events
         public UnityAction OnPlayerWin;
         #endregion

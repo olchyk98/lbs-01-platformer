@@ -11,12 +11,9 @@ namespace Player
         {
             // Get IIntractable
             IIntractable otherIntractable = other.gameObject.GetComponent<IIntractable>();
-            
-            // Check if successfully extracted
-            if (otherIntractable == null) return;
-            
-            // Interact with the object
-            otherIntractable.InteractWith(gameObject);
+
+            // Interact with the object if can
+            otherIntractable?.InteractWith(gameObject);
         }
         #endregion
     }

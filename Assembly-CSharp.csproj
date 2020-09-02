@@ -61,7 +61,7 @@
      <Compile Include="Assets\Contracts\IInteractable.cs" />
      <Compile Include="Assets\Scripts\StatsCanvas\StatsUpdater.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
-     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraPlayerHealthShake.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/oles/lbs-01/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

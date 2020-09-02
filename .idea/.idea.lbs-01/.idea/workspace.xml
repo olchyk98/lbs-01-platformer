@@ -20,15 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="087dc2a1-d57e-4e6a-b990-4f356aeec6ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraPlayerHealthShake.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.lbs-01/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.lbs-01/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.lbs-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.lbs-01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerScores.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerScores.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraShake.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraShake.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraPlayerHealthShake.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/bb/bb94aaccf42a8df5f810d84259fa7d59.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/bb/bb94aaccf42a8df5f810d84259fa7d59.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +52,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerScores.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerGroundEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3D496C8E-82AE-4EBD-B5D2-754C57C486CF/12/aa87b2cb/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraShake.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraPlayerHealthShake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obstacle/Obstacle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4648B31-44DF-498A-90DA-4EDE637BD05B/90/e01633ef/Collision2D.cs" root0="SKIP_HIGHLIGHTING" />
@@ -76,6 +79,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerScores.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraShake.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraPlayerHealthShake.cs" />
       </list>
     </option>
   </component>
@@ -123,7 +127,7 @@
       <updated>1598820628433</updated>
       <workItem from="1598820645204" duration="3669000" />
       <workItem from="1598948834029" duration="16191000" />
-      <workItem from="1599027976752" duration="1862000" />
+      <workItem from="1599027976752" duration="3930000" />
     </task>
     <servers />
   </component>
@@ -223,9 +227,9 @@
       <screen x="0" y="23" width="1440" height="831" />
     </state>
     <state x="106" y="135" width="1200" height="587" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.831@0.23.1440.831" timestamp="1599030939143" />
-    <state x="369" y="175" width="672" height="678" key="search.everywhere.popup" timestamp="1599037195802">
+    <state x="369" y="175" width="672" height="678" key="search.everywhere.popup" timestamp="1599043089456">
       <screen x="0" y="23" width="1440" height="831" />
     </state>
-    <state x="369" y="175" width="672" height="678" key="search.everywhere.popup/0.23.1440.831@0.23.1440.831" timestamp="1599037195802" />
+    <state x="369" y="175" width="672" height="678" key="search.everywhere.popup/0.23.1440.831@0.23.1440.831" timestamp="1599043089456" />
   </component>
 </project>

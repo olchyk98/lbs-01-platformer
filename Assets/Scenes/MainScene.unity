@@ -610,6 +610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 651227129}
+  - component: {fileID: 651227131}
   - component: {fileID: 651227130}
   m_Layer: 0
   m_Name: CameraHolder
@@ -642,12 +643,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 651227128}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76b1c49a9d7b429f9ea97002708b2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myDuration: 0.15
+  myMagnitude: 0.15
+--- !u!114 &651227131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651227128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b475a50160f5407c809d38a5d2013c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myTargetHealth: {fileID: 690962925}
-  myDuration: 0.3
-  myMagnitude: 0.2
 --- !u!1 &690962917
 GameObject:
   m_ObjectHideFlags: 0
